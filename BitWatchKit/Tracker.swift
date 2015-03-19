@@ -14,7 +14,7 @@ public class Tracker {
   
   let defaults = NSUserDefaults.standardUserDefaults()
   let session: NSURLSession
-  let URL = "https://api.bitcoinaverage.com/ticker/GBP"
+  let URL = "https://api.bitcoinaverage.com/ticker/USD"
   
   public class var dateFormatter: NSDateFormatter {
     struct DateFormatter {
@@ -36,7 +36,7 @@ public class Tracker {
     }
     dispatch_once(&PriceFormatter.token) {
       let formatter = NSNumberFormatter()
-      formatter.currencyCode = "GBP"
+      formatter.currencyCode = "USD"
       formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
       PriceFormatter.instance = formatter
     }
